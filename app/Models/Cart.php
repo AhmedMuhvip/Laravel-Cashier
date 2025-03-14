@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Cart extends Model
 {
     protected $guarded = [];
 
 
-    public function carts()
+    public function courses()
     {
-        return $this->belongsToMany(Cart::class);
+
+        return $this->belongsToMany(Course::class);
     }
 }

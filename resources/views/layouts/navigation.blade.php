@@ -12,17 +12,23 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <!-- Home Links -->
+                    <!-- Home Link -->
 
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Courses') }}
                     </x-nav-link>
 
+                    <!-- Card Link -->
 
-                    <!-- Dashboard Links -->
+                    <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                        {{ __('Cart') }}
+                    </x-nav-link>
+
+                    <!-- Dashboard Link -->
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
 
                 </div>
             </div>
