@@ -9,8 +9,7 @@ class CartController extends Controller
 {
     public function index()
     {
-        $cart = Cart::with('courses')->where('session_id', session()->getId())->first();
-        return view('cart.index', get_defined_vars());
+        return view('cart.index');
     }
 
     public function addtoCart(Course $course)
