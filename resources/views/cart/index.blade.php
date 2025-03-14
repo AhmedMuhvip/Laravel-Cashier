@@ -15,7 +15,7 @@
                                 <h6>{{$course->name}}
                                     <small class="text-blue-500">({{$course->price}})</small>
                                 </h6>
-                                <a href="#"
+                                <a href="{{route('removeFromCart',$course)}}"
                                    class="inline-flex h-12 items-center justify-center rounded-md bg-neutral-950 px-3 py-2 mt-4 mb-4 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95">
                                     Remove
                                 </a>

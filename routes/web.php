@@ -24,6 +24,7 @@ Route::controller(CourseController::class)->group(function () {
 Route::controller(CartController::class)->group(function () {
     Route::get('/cart', 'index')->name('cart.index');
     Route::get('/addToCart/{course:slug}', 'addtoCart')->name('addtoCart');
+    Route::get('/removeFromCart/{course:slug}', 'removeFromCart')->name('removeFromCart');
 });
 
 Route::get('/dashboard', function () {

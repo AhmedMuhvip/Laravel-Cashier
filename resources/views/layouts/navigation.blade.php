@@ -21,7 +21,7 @@
                     <!-- Card Link -->
 
                     <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
-                        {{ __('Cart') }}
+                        {{ __('Cart') }} ({{$cart? count($cart->courses):0}})
                     </x-nav-link>
 
                     <!-- Dashboard Link -->

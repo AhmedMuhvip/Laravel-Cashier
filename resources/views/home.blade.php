@@ -18,7 +18,7 @@
                             <p class="text-lg font-semibold text-gray-800 mt-2">
                                 ${{$course->price}}</p>
                             @if($cart && $cart->courses->contains($course))
-                                <a href="#"
+                                <a href="{{route('removeFromCart',$course)}}"
                                    class="inline-block mt-6 bg-blue-500 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-600 transition">
                                     Remove From Cart
                                 </a>

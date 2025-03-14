@@ -20,4 +20,13 @@ class CartController extends Controller
         $cart->courses()->syncWithoutDetaching($course);
         return redirect()->back();
     }
+
+    public function removeFromCart(Course $course)
+    {
+        $cart = Cart::session()->first();
+        abort_unless($cart, 404);
+
+        $cart->courses()->detach($course);
+        return redirect()->back();
+    }
 }
