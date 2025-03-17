@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Course;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -16,6 +17,7 @@ class CartController extends Controller
     {
         $cart = Cart::firstOrCreate([
             'session_id' => session()->getId(),
+            'user_id' => auth()->user() ? Auth::id() : null,
         ]);
         $cart->courses()->syncWithoutDetaching($course);
         return redirect()->back();
