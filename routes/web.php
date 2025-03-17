@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Course;
@@ -25,6 +26,12 @@ Route::controller(CartController::class)->group(function () {
     Route::get('/cart', 'index')->name('cart.index');
     Route::get('/addToCart/{course:slug}', 'addtoCart')->name('addtoCart');
     Route::get('/removeFromCart/{course:slug}', 'removeFromCart')->name('removeFromCart');
+});
+
+/*---------------- Checkout Management --------------*/
+
+Route::controller(CheckoutController::class)->group(function () {
+    Route::get('/checkout', 'checkout')->middleware('auth')->name('checkout');
 });
 
 Route::get('/dashboard', function () {

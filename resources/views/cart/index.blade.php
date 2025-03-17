@@ -13,7 +13,7 @@
                         @foreach($cart->courses as $course)
                             <div class="bg-green-50 mb-3 p-2 flex justify-between items-center">
                                 <h6>{{$course->name}}
-                                    <small class="text-blue-500">({{$course->price}})</small>
+                                    <small class="text-blue-500">({{$course->price()}})</small>
                                 </h6>
                                 <a href="{{route('removeFromCart',$course)}}"
                                    class="inline-flex h-12 items-center justify-center rounded-md bg-neutral-950 px-3 py-2 mt-4 mb-4 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95">
@@ -21,6 +21,15 @@
                                 </a>
                             </div>
                         @endforeach
+                        <div class="bg-green-50 mb-3 p-2 flex justify-between items-center">
+                            <h6>Total
+                                <small class="text-blue-500">({{$cart->total()}})</small>
+                            </h6>
+                            <a href="{{route('checkout')}}"
+                               class="rounded-md border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                Checkout
+                            </a>
+                        </div>
                     @else
                         <div class="flex items-center bg-blue-500 text-white text-sm font-bold px-4 py-3" role="alert">
                             <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"
